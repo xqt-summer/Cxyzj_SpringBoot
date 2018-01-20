@@ -26,6 +26,10 @@ public class Success extends Response {
         this.data.put(name, data);
     }
 
+    public void insert(Object data) {
+        res.put("data", data);
+    }
+
     @Override
     public Map<String, Object> get() {
         return res;

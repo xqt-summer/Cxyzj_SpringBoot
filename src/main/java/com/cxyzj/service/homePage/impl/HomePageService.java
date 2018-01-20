@@ -12,10 +12,14 @@ import com.cxyzj.domain.homePage.mapper.BoardMapper;
 import com.cxyzj.domain.homePage.mapper.Qr_codeMapper;
 import com.cxyzj.domain.homePage.mapper.SlideshowMapper;
 import com.cxyzj.service.homePage.homePageServiceInterface;
+import com.cxyzj.utils.Failure;
+import com.cxyzj.utils.Response;
+import com.cxyzj.utils.Success;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class HomePageService implements homePageServiceInterface {
@@ -29,8 +33,17 @@ public class HomePageService implements homePageServiceInterface {
 
 
     //获取轮播图列表
-    public List<Slideshow> slideGet() {
-        return slideshowMapper.slideGet();
+    public Map<String, Object> slideGet() {
+        List<Slideshow> slideshows = slideshowMapper.slideGet();
+        Response response;
+        if (slideshows.size() == 0) {
+            response = new Failure("没有轮播图！");
+        } else {
+            response = new Success();
+            response.insert(slideshows);
+        }
+
+        return response.get();
     }
 
     //添加轮播图

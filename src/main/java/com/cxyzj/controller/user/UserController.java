@@ -26,7 +26,6 @@ public class UserController {
         System.out.println(request);
         Map<String, Object> map = userService.userRegist(request.get("nickname"), request.get("email"), request.get("password"));
 
-
         return map;
     }
 

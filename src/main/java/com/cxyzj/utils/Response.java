@@ -18,6 +18,10 @@ public abstract class Response {
     public void insert(String name, Object data) {
     }
 
+    public void insert(Object data) {
+
+    }
+
     public abstract Map<String, Object> get();//必须实现
 }
 

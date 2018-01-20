@@ -6,6 +6,7 @@ import com.cxyzj.domain.homePage.Qr_code;
 import com.cxyzj.domain.homePage.Slideshow;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 耿志强
@@ -19,7 +20,7 @@ public interface homePageServiceInterface {
 
 
     //获取轮播图列表
-    List<Slideshow> slideGet();
+    Map<String, Object> slideGet();
 
     //添加轮播图
     Integer slideAdd(String img_url, int seq, String img_title, String target_url);
