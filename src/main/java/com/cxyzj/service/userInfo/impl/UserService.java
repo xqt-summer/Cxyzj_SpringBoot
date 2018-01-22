@@ -3,9 +3,7 @@ package com.cxyzj.service.userInfo.impl;
 import com.cxyzj.domain.userInfo.User;
 import com.cxyzj.domain.userInfo.mapper.UserMapper;
 import com.cxyzj.service.userInfo.UserServiceInterface;
-import com.cxyzj.utils.Failure;
-import com.cxyzj.utils.Response;
-import com.cxyzj.utils.Success;
+import com.cxyzj.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +34,7 @@ public class UserService implements UserServiceInterface {
             user.setIntroduce("这个人很懒。。。。。");                  //默认个人简介
             user.setGender("不明");                     //默认性别
             user.setBg_url("C:/cxyzjStatic/user/bg_url/bgurl01.jpg");
-            user.setUser_id(Math.abs(email.hashCode()));//todo 需要修改
+            user.setUser_id(ID.Get());
             user.setRegister_date(System.currentTimeMillis());
             userMapper.registerUser(user);
 

@@ -3,7 +3,7 @@ package com.cxyzj.domain.userInfo;
 
 //用户实体类
 public class User {
-    private int user_id;            //用户id
+    private long user_id;            //用户id
     private String password;        //密码
     private String nickname;        //昵称
     private String true_name;       //真实姓名
@@ -38,11 +38,11 @@ public class User {
         this.email = email;
     }
 
-    public int getUser_id() {
+    public long getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(long user_id) {
         this.user_id = user_id;
     }
 
