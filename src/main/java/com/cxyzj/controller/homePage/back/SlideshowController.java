@@ -41,7 +41,7 @@ public class SlideshowController {
     Long slide_seqUpdate(@PathVariable("slideshow_id") int slideshow_id,
                          @RequestParam("seq") int seq) {
         Long slideshow = homePageService.slide_seqUpdate(slideshow_id, seq);
-        System.out.println(slideshow);
+        //System.out.println(slideshow);
         return slideshow;
     }
 
