@@ -4,6 +4,7 @@ import com.cxyzj.domain.userInfo.User;
 import com.cxyzj.domain.userInfo.mapper.UserMapper;
 import com.cxyzj.service.userInfo.UserServiceInterface;
 import com.cxyzj.utils.*;
+import com.sun.javafx.binding.SelectBinding;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,7 @@ public class UserService implements UserServiceInterface {
             user.setUser_id(ID.Get());
             user.setRegister_date(System.currentTimeMillis());
             userMapper.registerUser(user);
+
 
             //response 对象
             response = new Success();
