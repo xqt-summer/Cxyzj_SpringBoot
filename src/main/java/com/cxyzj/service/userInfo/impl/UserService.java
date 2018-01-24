@@ -39,7 +39,6 @@ public class UserService implements UserServiceInterface {
             user.setRegister_date(System.currentTimeMillis());
             userMapper.registerUser(user);
 
-
             //response 对象
             response = new Success();
             response.insert("access_token", "fuck");
