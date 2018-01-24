@@ -38,6 +38,7 @@ public class UserService implements UserServiceInterface {
             user.setUser_id(ID.Get());
             user.setRegister_date(System.currentTimeMillis());
             userMapper.registerUser(user);
+            SelectBinding.AsDouble
 
             //response 对象
             response = new Success();
